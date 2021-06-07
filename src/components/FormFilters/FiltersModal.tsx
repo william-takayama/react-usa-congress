@@ -26,16 +26,22 @@ const genderOptions: InputSelect["options"] = [
   { label: "Male", value: "M" },
 ];
 
-const nextElectionYearsOptions: InputSelect["options"] = [
-  { label: "", value: "" },
-  { label: "2018", value: "2018" },
-  { label: "2019", value: "2019" },
-  { label: "2020", value: "2020" },
-  { label: "2021", value: "2021" },
-  { label: "2022", value: "2022" },
-  { label: "2023", value: "2023" },
-  { label: "2024", value: "2024" },
-];
+const nextElectionYearsOptions: InputSelect["options"] = Array.from(
+  { length: 20 },
+  (_, i) => {
+    if (i === 0) {
+      return {
+        label: "",
+        value: "",
+      };
+    }
+
+    return {
+      label: String(2008 + i),
+      value: String(2008 + i),
+    };
+  }
+);
 
 const fieldValues = [
   "party",
@@ -86,7 +92,7 @@ export function FiltersModal({ isVisible, close }: FiltersModalProps) {
       <form className={classes.form}>
         <Typography type="heading3">Filters</Typography>
 
-        <LineDivider marginTop={24} marginBottom={24} />
+        <LineDivider marginTop={12} marginBottom={12} />
 
         <Input
           id="party-options"
@@ -97,7 +103,7 @@ export function FiltersModal({ isVisible, close }: FiltersModalProps) {
           placeholder="Select a party"
         />
 
-        <Spacing type="block" size="x-small" />
+        <Spacing type="block" size="xx-small" />
 
         <Input
           id="gender-options"
@@ -108,7 +114,7 @@ export function FiltersModal({ isVisible, close }: FiltersModalProps) {
           placeholder="Select a gender"
         />
 
-        <Spacing type="block" size="x-small" />
+        <Spacing type="block" size="xx-small" />
 
         <Input
           id="next-election-options"
@@ -118,7 +124,7 @@ export function FiltersModal({ isVisible, close }: FiltersModalProps) {
           options={nextElectionYearsOptions}
           placeholder="Next election year"
         />
-        <Spacing type="block" size="x-small" />
+        <Spacing type="block" size="xx-small" />
 
         <Input
           id="total-votes"
@@ -126,13 +132,13 @@ export function FiltersModal({ isVisible, close }: FiltersModalProps) {
           placeholder=""
           defaultValue=""
           min="0"
-          max="1000"
+          max="1600"
           step={50}
           onChange={(e) => select(e, "total-votes")}
           rangeValue={`${totalVotesValue} votes`}
         />
 
-        <LineDivider marginTop={16} marginBottom={16} />
+        <LineDivider marginTop={12} marginBottom={12} />
 
         <Input
           id="votes-with-party-pct"
@@ -145,7 +151,7 @@ export function FiltersModal({ isVisible, close }: FiltersModalProps) {
           onChange={(e) => select(e, "votes-with-party-pct")}
           rangeValue={`${totalVotesWithPartyValue}%`}
         />
-        <LineDivider marginTop={16} marginBottom={16} />
+        <LineDivider marginTop={12} marginBottom={12} />
 
         <Button
           type="submit"
