@@ -26,7 +26,7 @@ export type Member = {
   middle_name: null;
   missed_votes: number;
   missed_votes_pct: number;
-  next_election: string;
+  next_election?: string;
   ocd_id: string;
   office: string;
   party: string;
