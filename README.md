@@ -1,4 +1,4 @@
-# Beyoung Challenge
+# USA Congress public api
 
 <h3 align="center">
     <img alt="Logo" title="#logo" width="450px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYKK-LkqyNtWLD0IcdAzEy-PwvjKJgOcjGaA&usqp=CAU">
@@ -24,7 +24,7 @@
     <img src="https://media.giphy.com/media/pOAFvSXpkQcZ4ATbyj/giphy.gif" width="600px" align="center" alt="demo-mobile">
   </p>
   
-  <h3 align="center"> :computer: Demo on Mobile 2: </h3>
+  <h3 align="center"> :iphone: Demo on Mobile 2: </h3>
   <p align="center">
     <img src="https://media.giphy.com/media/g1VslggCAYQk9PKpVE/giphy.gif" width="600px" align="center" alt="demo-desktop">
   </p>
