@@ -1,0 +1,23 @@
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  width: calc(100vw - var(--spacing-xxx-small));
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--header-z-index);
+  background: var(--color-background);
+  color: var(--color-primary);
+  border-radius: calc(var(--radius-small) / 2);
+  padding: var(--spacing-xxxx-small) var(--spacing-x-small);
+}
+
+.logo {
+  width: auto;
+  height: 20px;
+  margin: 0 auto;
+}

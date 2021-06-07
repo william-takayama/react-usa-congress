@@ -1,0 +1,134 @@
+// .button {
+//   display: inline-flex;
+//   cursor: pointer;
+//   border: 0;
+
+//   &[disabled] {
+//     opacity: 0.6;
+//     cursor: not-allowed;
+//   }
+
+//   & .flud {
+//     flex: 1;
+//     width: 100%;
+//   }
+
+//   & .withContent {
+//     min-width: 320px;
+//   }
+
+//   & .dark {
+//     background-color: var(--color-background);
+//     color: var(--color-foreground);
+//   }
+
+//   & .light {
+//     background-color: var(--color-foreground);
+//     color: var(--color-background);
+//   }
+// }
+
+// $sizes: regular, small, x-small, xx-small;
+
+// .only {
+//   padding: 10px;
+//   @each $size in $sizes {
+//     .size-#{$size} {
+//       padding: 0 calc(var(--button-size-#{$size}) / 2);
+//       height: var(--button-size-#{$size});
+//     }
+//   }
+// }
+
+.loader {
+  background-color: transparent;
+  position: relative;
+}
+
+.button {
+  font-family: var(--button-typography-family);
+  font-size: var(--button-typography-size);
+  font-weight: var(--button-typography-weight);
+  border: 1px solid var(--color-foreground);
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-small);
+  flex-shrink: 0;
+  width: fit-content;
+  vertical-align: middle;
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:not(.bordered) {
+    border-color: transparent;
+  }
+}
+
+.variant-none {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex: 1;
+  color: var(--color-foreground);
+}
+
+.variant-dark {
+  border-color: var(--color-foreground);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.variant-light {
+  border-color: var(--color-background);
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+}
+
+$sizes: large, regular, small, x-small, xx-small;
+
+@each $size in $sizes {
+  .size-#{$size} {
+    padding: 0 calc(var(--button-size-#{$size}) / 4);
+    height: var(--button-size-#{$size});
+  }
+}
+
+.type-plain {
+  height: auto;
+  padding: 0 2px;
+  border-radius: 0;
+  border: none;
+  user-select: initial;
+}
+
+.onlyIcon {
+  padding: 0;
+
+  @each $size in $sizes {
+    &.size-#{$size} {
+      width: var(--button-size-#{$size});
+    }
+  }
+}
+
+.fluid {
+  width: 100%;
+}
+
+.loading {
+  pointer-events: none;
+}
+
+.spacing-none {
+  padding: 0 10px;
+}

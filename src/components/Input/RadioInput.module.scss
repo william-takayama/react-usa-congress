@@ -1,0 +1,60 @@
+.inputRadioContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.inputRadio:checked + label {
+  border: 1px solid var(--color-foreground);
+}
+
+.label {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: inherit;
+  padding: 4px;
+  cursor: pointer;
+  border: 1px solid var(--color-xx-contrast);
+  border-radius: var(--radius-small);
+}
+
+.circle {
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  outline: none;
+  position: relative;
+  background-color: var(--color-xx-contrast);
+  margin-right: 4px;
+
+  &[data-selected="true"] {
+    border: 2px solid var(--color-foreground);
+    background-color: var(--color-background);
+  }
+}
+
+.innerCircle {
+  position: absolute;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  left: 50%;
+  top: 50%;
+  margin: -4px 0px 0px -4px;
+  background-color: var(--color-xxx-contrast);
+
+  [data-selected="true"] & {
+    background-color: var(--color-foreground);
+  }
+}
+
+.iconContainer {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  height: 16px;
+}

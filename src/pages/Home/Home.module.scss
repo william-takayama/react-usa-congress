@@ -1,0 +1,33 @@
+.pagesList {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.button {
+  &.active {
+    background-color: var(--color-xx-contrast);
+  }
+}
+
+.filtersHeader {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radioInputContainer {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.congressOptionsInput {
+  min-width: 60px;
+  margin-left: var(--spacing-x-small);
+}

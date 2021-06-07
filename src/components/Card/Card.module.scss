@@ -1,0 +1,23 @@
+.card {
+  padding: var(--spacing-x-small);
+
+  &.small {
+    border-radius: var(--radius-small);
+  }
+
+  &.regular {
+    border-radius: var(--radius-regular);
+  }
+
+  &.large {
+    border-radius: var(--radius-large);
+  }
+
+  &.buttonRole {
+    cursor: pointer;
+  }
+}
+
+.content {
+  display: flex;
+}

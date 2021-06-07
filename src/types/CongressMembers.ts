@@ -1,0 +1,58 @@
+import { Chamber } from "./Congress";
+
+export type Member = {
+  api_uri: string;
+  contact_form: string;
+  cook_pvi: null;
+  crp_id: string;
+  cspan_id: string;
+  date_of_birth: string;
+  dw_nominate: number;
+  facebook_account: string;
+  fax: string;
+  fec_candidate_id: string;
+  first_name: string;
+  gender: string;
+  google_entity_id: string;
+  govtrack_id: string;
+  icpsr_id: string;
+  id: string;
+  ideal_point: null;
+  in_office: false;
+  last_name: string;
+  last_updated: string;
+  leadership_role: null;
+  lis_id: string;
+  middle_name: null;
+  missed_votes: number;
+  missed_votes_pct: number;
+  next_election: string;
+  ocd_id: string;
+  office: string;
+  party: string;
+  phone: string;
+  rss_url: string;
+  senate_class: string;
+  seniority: string;
+  short_title: string;
+  state: string;
+  state_rank: string;
+  suffix: null;
+  title: string;
+  total_present: number;
+  total_votes: number;
+  twitter_account: string;
+  url: string;
+  votes_against_party_pct: number;
+  votes_with_party_pct: number;
+  votesmart_id: string;
+  youtube_account: string;
+};
+
+export type CongressMembersResult = {
+  chamber: Chamber;
+  congress: string;
+  members: Member[];
+  num_results: number;
+  offset: number;
+};

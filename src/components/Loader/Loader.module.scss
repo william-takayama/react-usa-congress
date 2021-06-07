@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  position: fixed;
+  z-index: var(--loader-z-index);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-xx-contrast);
+}
