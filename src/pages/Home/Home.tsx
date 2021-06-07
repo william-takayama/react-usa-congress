@@ -111,8 +111,8 @@ function HomePageComponent() {
     ) {
       return members?.filter((member) => {
         return (
-          member.gender?.includes(parsedQuery["gender"]) &&
-          member.next_election?.includes(
+          member.gender?.includes(parsedQuery["gender"] ?? "") &&
+          (member.next_election ?? "")?.includes(
             parsedQuery["next-election-year"] ?? ""
           ) &&
           member.party?.includes(parsedQuery["party"] ?? "") &&
@@ -257,7 +257,7 @@ function HomePageComponent() {
 
       <ul className={classes.pagesList}>
         {pages.map((page, id) => {
-          if (page.length === 0) {
+          if (page.length === 0 || filteredCards?.length === 0) {
             return undefined;
           }
           return (
