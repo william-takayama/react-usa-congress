@@ -186,6 +186,11 @@ export function FiltersProvider({ children }: PropsWithChildren<any>) {
 
   const getFieldValue = useCallback(
     (fieldKey: FieldType["key"]): FieldType["value"] => {
+      const valueFromLS: string | number = localStorage.get(fieldKey);
+      if (localStorage.get(fieldKey)) {
+        return valueFromLS;
+      }
+
       return (
         state.fieldsValue.find((field) => field.key === fieldKey)?.value ?? ""
       );
