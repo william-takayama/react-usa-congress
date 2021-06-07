@@ -1,24 +1,26 @@
+import { parse } from "query-string";
 import React, { useEffect, useMemo, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { Loader } from "../../components/Loader/Loader";
+import { Spacing } from "../../components/Spacing/Spacing";
 import { Typography } from "../../components/Typography/Typography";
+import mapInfo from "../../constants/map.json";
 import { congressService } from "../../services/congress.service";
+import { Chamber } from "../../types/Congress";
 import { CongressMemberDetail } from "../../types/CongressMemberDetail";
 import { LeavingOfficeMember } from "../../types/CongressMemberLeavingOffice";
-import mapInfo from "../../constants/map.json";
-import { parse } from "query-string";
-import { Chamber } from "../../types/Congress";
-import { Spacing } from "../../components/Spacing/Spacing";
-import { Button } from "../../components/Button/Button";
-import { FaArrowLeft, FaBackward } from "react-icons/fa";
 import classes from "./MemberDetails.module.scss";
 
 export function MemberDetails() {
   const { id } = useParams<any>();
-  const location = useLocation();
+  const location = useLocation<Record<string, any>>();
 
-  const queryString = useMemo(() => parse(location.search), [location.search]);
+  const queryString = useMemo(
+    () => parse(location.state.search),
+    [location.state.search]
+  );
 
   const [details, setDetails] = useState<CongressMemberDetail | undefined>();
   const [officeLocation, setOfficeLocation] =
